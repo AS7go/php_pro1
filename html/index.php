@@ -11,13 +11,13 @@ class ValueObject
 
     function __construct(int $red, int $green, int $blue)
     {
-        if($this->rgbValidate($red,'Red')) {
+        if ($this->rgbValidate($red, 'Red')) {
             $this->red = $red;
         }
-        if($this->rgbValidate($green, 'Green')) {
+        if ($this->rgbValidate($green, 'Green')) {
             $this->green = $green;
         }
-        if($this->rgbValidate($blue, 'Blue')) {
+        if ($this->rgbValidate($blue, 'Blue')) {
             $this->blue = $blue;
         }
 
@@ -38,6 +38,7 @@ class ValueObject
     {
         return $this->blue;
     }
+
 // === Private set ===
     private function setRed($red)
     {
@@ -53,12 +54,15 @@ class ValueObject
     {
         $this->blue = $blue;
     }
-// === setRGB Private rgbValidate ===
+
+// === setRGB rgbValidate ===
     public function setRGB($r = false, $g = false, $b = false)
     {
         if ($this->rgbValidate($r, 'Red')) {
             $this->setRed($r);
         }
+
+//        $g = 554; // !!! Oшибка для проверки !!!
 
         if ($this->rgbValidate($g, 'Green')) {
             $this->setGreen($g);
@@ -68,18 +72,17 @@ class ValueObject
             $this->setBlue($b);
         }
     }
-// === Exception  rgbValidate ===
 
+// === Exception  rgbValidate ===
     private function rgbValidate(int $code, $name)
     {
-        $code = 354;
-        $name = 'Green';
         if (!is_numeric($code) || $code < 0 || $code > 255) {
-            return throw new Exception($name . ' = ' . $code . ' <--- color is out of range or not int !!! ');
+            throw new Exception($name . ' = ' . $code . ' <--- color is out of range or not int !!! ');
         }
 
         return true;
     }
+
 // === mix ===
     public function mix($obj)
     {
@@ -99,31 +102,33 @@ class Index
 
     function __construct()
     {
-        $this->rgb = $this->random(); //в rgb присваиваем сгенерированное значение из random()
-        $this->rgb2 = $this->random();
+        $this->rgb = self::random(); //в rgb присваиваем сгенерированное значение из static random()
+        $this->rgb2 = self::random(); //формируем rgb2 для equals
         $this->init();
     }
 
     public function init()
     {
-//        $mixedColor = $this->rgb->mix(new ValueObject(100, 100, 100));
         $mixedColor = $this->rgb->mix(new ValueObject($this->rgb2->getRed(), $this->rgb2->getGreen(), $this->rgb2->getBlue()));
-// код для наглядности
+        // код для наглядности
         echo '<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; width: 255px; column-gap: 15px">';
-        echo '<div style="width: 170px; height: 120px; color: white; background-color: rgb(' . $this->rgb->getRed() . ',' . $this->rgb->getGreen() . ',' . $this->rgb->getBlue() . '); display: flex; align-items: center; justify-content: center;">rgb(' . $this->rgb->getRed() . ',' . $this->rgb->getGreen() . ',' . $this->rgb->getBlue() . ')</div>';
-        echo '<div style="width: 170px; height: 120px; color: white; background-color: rgb(' . $this->rgb2->getRed() . ',' . $this->rgb2->getGreen() . ',' . $this->rgb2->getBlue() . '); display: flex; align-items: center; justify-content: center;">rgb(' . $this->rgb2->getRed() . ',' . $this->rgb2->getGreen() . ',' . $this->rgb2->getBlue() . ')</div>';
-        echo '<div style="width: 170px; height: 120px; color: white; background-color: rgb(' . $mixedColor->getRed() . ',' . $mixedColor->getGreen() . ',' . $mixedColor->getBlue() . '); display: flex; align-items: center; justify-content: center;">rgb(' . $mixedColor->getRed() . ',' . $mixedColor->getGreen() . ',' . $mixedColor->getBlue() . ')</div>';
+        echo '<div style="width: 200px; height: 120px; color: white; background-color: rgb(' . $this->rgb->getRed() . ',' . $this->rgb->getGreen() . ',' . $this->rgb->getBlue() . '); display: flex; align-items: center; justify-content: center;">rgb(' . $this->rgb->getRed() . ',' . $this->rgb->getGreen() . ',' . $this->rgb->getBlue() . ')</div>';
+        echo '<div style="width: 200px; height: 120px; color: white; background-color: rgb(' . $this->rgb2->getRed() . ',' . $this->rgb2->getGreen() . ',' . $this->rgb2->getBlue() . '); display: flex; align-items: center; justify-content: center;">rgb2(' . $this->rgb2->getRed() . ',' . $this->rgb2->getGreen() . ',' . $this->rgb2->getBlue() . ')</div>';
+        echo '<div style="width: 200px; height: 120px; color: white; background-color: rgb(' . $mixedColor->getRed() . ',' . $mixedColor->getGreen() . ',' . $mixedColor->getBlue() . '); display: flex; align-items: center; justify-content: center;">mix rgb(' . $mixedColor->getRed() . ',' . $mixedColor->getGreen() . ',' . $mixedColor->getBlue() . ')</div>';
+
         echo '</div>';
-        echo '<p><strong>Is equals:</strong> ' . ($this->equals($this->rgb, $this->rgb2) ? 'true' : 'false') . '</p>';
+        echo '<p><strong>Is equals:</strong> ' . ($this->equals($this->rgb, $this->rgb2) ? 'true' : 'false') . '</p>'; // выводим результат equals в виде true или false
     }
 
     // === Equals ===
-    public function equals($color, $color_2)
+    public function equals($color, $color2) //rgb, rgb2
     {
-        return $color == $color_2;
+        d($color);
+        d($color2);
+        return $color == $color2;
     }
 
-    // === Random ===
+    // === Random static ===
     public static function random()
     {
         $red = random_int(0, 255);
