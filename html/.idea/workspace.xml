@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="759a17a5-be88-4dfa-9393-f3361264aa9e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/111_index.php" beforeDir="false" afterPath="$PROJECT_DIR$/pgsql_index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/hw_4_index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +40,13 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;last_opened_file_path&quot;: &quot;/var/www/html&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
+    ]
   }
 }</component>
   <component name="RecentsManager">
@@ -62,6 +67,25 @@
       <workItem from="1669332457999" duration="6574000" />
       <workItem from="1669340031774" duration="5118000" />
       <workItem from="1669381660114" duration="1929000" />
+      <workItem from="1669384069650" duration="8987000" />
+      <workItem from="1669394224718" duration="5031000" />
+      <workItem from="1669401770121" duration="9895000" />
+      <workItem from="1669472277881" duration="60000" />
+      <workItem from="1669472500754" duration="37835000" />
+      <workItem from="1669555514655" duration="12000" />
+      <workItem from="1669555780594" duration="1510000" />
+      <workItem from="1669575025585" duration="13518000" />
+      <workItem from="1669636022894" duration="134000" />
+      <workItem from="1669636189223" duration="7951000" />
+      <workItem from="1669655455792" duration="36000" />
+      <workItem from="1669655664456" duration="2585000" />
+      <workItem from="1669659371223" duration="203000" />
+      <workItem from="1669659622620" duration="3534000" />
+      <workItem from="1669669886519" duration="2838000" />
+      <workItem from="1669672775668" duration="3320000" />
+      <workItem from="1669683190567" duration="15649000" />
+      <workItem from="1669728013780" duration="19000" />
+      <workItem from="1669728117907" duration="6202000" />
     </task>
     <servers />
   </component>
@@ -78,5 +102,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
