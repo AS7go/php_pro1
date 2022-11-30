@@ -2,17 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="759a17a5-be88-4dfa-9393-f3361264aa9e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.docker/php/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/.docker/php/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/html.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/html.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hw_7_call_custom_exception_valid_v2_index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pgsql_index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/console_2_tables.txt" beforeDir="false" afterPath="$PROJECT_DIR$/console_autoparc.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Копия (1) html/vendor/larapack/dd" beforeDir="false" afterPath="$PROJECT_DIR$/../Копия (1) html/vendor/larapack/dd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Копия (1) html/vendor/symfony/polyfill-mbstring" beforeDir="false" afterPath="$PROJECT_DIR$/../Копия (1) html/vendor/symfony/polyfill-mbstring" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Копия (1) html/vendor/symfony/var-dumper" beforeDir="false" afterPath="$PROJECT_DIR$/../Копия (1) html/vendor/symfony/var-dumper" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +92,7 @@
       <workItem from="1669749556214" duration="684000" />
       <workItem from="1669752939326" duration="235000" />
       <workItem from="1669753191759" duration="8927000" />
-      <workItem from="1669772544169" duration="9377000" />
+      <workItem from="1669772544169" duration="10806000" />
     </task>
     <servers />
   </component>
