@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="759a17a5-be88-4dfa-9393-f3361264aa9e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/dd0e995f-b910-4f59-a4a6-b366ca7a10c3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/dd0e995f-b910-4f59-a4a6-b366ca7a10c3.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/console_2_tables.txt" beforeDir="false" afterPath="$PROJECT_DIR$/console_autoparc.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Копия (1) html/vendor/larapack/dd" beforeDir="false" afterPath="$PROJECT_DIR$/../Копия (1) html/vendor/larapack/dd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Копия (1) html/vendor/symfony/polyfill-mbstring" beforeDir="false" afterPath="$PROJECT_DIR$/../Копия (1) html/vendor/symfony/polyfill-mbstring" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Копия (1) html/vendor/symfony/var-dumper" beforeDir="false" afterPath="$PROJECT_DIR$/../Копия (1) html/vendor/symfony/var-dumper" afterDir="false" />
@@ -92,7 +92,8 @@
       <workItem from="1669749556214" duration="684000" />
       <workItem from="1669752939326" duration="235000" />
       <workItem from="1669753191759" duration="8927000" />
-      <workItem from="1669772544169" duration="10806000" />
+      <workItem from="1669772544169" duration="11124000" />
+      <workItem from="1669785459318" duration="228000" />
     </task>
     <servers />
   </component>
