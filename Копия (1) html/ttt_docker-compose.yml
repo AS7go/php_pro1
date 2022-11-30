@@ -10,13 +10,17 @@ networks:
 
 services:
   db:
+#    image: "postgres:14"
     image: "mysql:8"
     restart: always
     environment:
+#      POSTGRES_ROOT_PASSWORD: secret
       MYSQL_ROOT_PASSWORD: secret
     ports:
       - 3306:3306
+#      - 5432:5432
     volumes:
+#      - "db_volume:/var/pgsql"
       - "db_volume:/var/mysql"
     networks:
       - php_advanced
@@ -27,13 +31,11 @@ services:
 #      ports:
 #        - 8080:8080
   app:
-#    image: "php:8.1-apache"
-    build:
-      context: .docker/php
+    image: "php:8.1-apache"
     restart: always
     volumes:
       - .:/var/www/html
     ports:
-      - "80:80"
+      - "81:80"
     networks:
       - php_advanced

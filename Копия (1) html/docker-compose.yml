@@ -10,22 +10,27 @@ networks:
 
 services:
   db:
-    image: "mysql:8"
+    image: "postgres:14"
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: secret
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: secret
+      POSTGRES_DB: postgres2
     ports:
-      - 3306:3306
+      - "5432:5432"
     volumes:
-      - "db_volume:/var/mysql"
+      - "db_volume:/var/lib/pgsql"
     networks:
       - php_advanced
 
-#    adminer:
-#      image: adminer
-#      restart: always
-#      ports:
-#        - 8080:8080
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+    networks:
+      - php_advanced
+
   app:
 #    image: "php:8.1-apache"
     build:
@@ -34,6 +39,6 @@ services:
     volumes:
       - .:/var/www/html
     ports:
-      - "80:80"
+      - "83:80"
     networks:
       - php_advanced
