@@ -1,15 +1,21 @@
 <?php
 require __DIR__ . '/vendor/autoload.php';
 
+
+$user = "root";
+$password = "secret";
+$database = "autoparc";
+$table = "parks";
+
 try {
-$pdo= new PDO(
-    "mysql:host=db;dbname=test",
-    'root',
-    'secret'
-);
-d($pdo);
-//var_dump($pdo);
-} catch (PDOException $exception) {
-    echo '<pre>'.print_r($exception->getMessage(),true).'</pre>';
+    $db1 = new PDO("mysql:host=db;dbname=$database", $user, $password);
+    echo "<h2>Autoparc</h2><ol>";
+    foreach ($db1->query("SELECT * FROM $table") as $row) {
+        echo "<li>" . $row['id'] . ' ' . $row['serial_number'] . ' ' . $row['address'] . "</li>";
+    }
+    echo "</ol>";
+} catch (PDOException $e) {
+    d($e::class, $e->getFile(), $e->getLine(), $e->getMessage());
+//    print "Error!: " . $e->getMessage() . "<br/>";
     die();
 }
