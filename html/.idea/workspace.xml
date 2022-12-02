@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="759a17a5-be88-4dfa-9393-f3361264aa9e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../homework_8/console_autoparc.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../homework_8/console_code.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../homework_8/script_autoparc_from_sql_generator.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../homework_8/tab_diagram.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/dd0e995f-b910-4f59-a4a6-b366ca7a10c3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/dd0e995f-b910-4f59-a4a6-b366ca7a10c3.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/console_autoparc.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script_autoparc_from_sql_generator.sql" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,7 +120,7 @@
       <workItem from="1669851053236" duration="2977000" />
       <workItem from="1669854207012" duration="4853000" />
       <workItem from="1669926786409" duration="690000" />
-      <workItem from="1669978329411" duration="40898000" />
+      <workItem from="1669978329411" duration="41504000" />
     </task>
     <servers />
   </component>
