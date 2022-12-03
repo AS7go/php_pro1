@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="759a17a5-be88-4dfa-9393-f3361264aa9e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/script_autoparc_from_sql_generator.sql" beforeDir="false" />
-    </list>
+    <list default="true" id="759a17a5-be88-4dfa-9393-f3361264aa9e" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -120,7 +118,7 @@
       <workItem from="1669851053236" duration="2977000" />
       <workItem from="1669854207012" duration="4853000" />
       <workItem from="1669926786409" duration="690000" />
-      <workItem from="1669978329411" duration="41504000" />
+      <workItem from="1669978329411" duration="41812000" />
     </task>
     <servers />
   </component>
