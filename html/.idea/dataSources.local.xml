@@ -27,8 +27,8 @@
         <introspection-scope>
           <node kind="schema">
             <name qname="@" />
-            <name qname="autoparc" />
             <name qname="test" />
+            <name qname="autoparc" />
           </node>
         </introspection-scope>
       </schema-mapping>

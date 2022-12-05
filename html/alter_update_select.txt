@@ -1,4 +1,4 @@
-# CREATE DATABASE autoparc;
+CREATE DATABASE autoparc;
 
 # >>>>> 1. Видалення однієї з таблиць
 
@@ -33,25 +33,34 @@ ALTER TABLE autoparc.drivers
 
 # >>>>> 3. Заповнення кожної таблиці хоча б по 3-5 записів
 
+INSERT INTO parks
+(serial_number, address)
+VALUES
+    ('#1', 'addres 1'),
+    ('#2', 'addres 2'),
+    ('#3', 'addres 3'),
+    ('#4', 'addres 4'),
+    ('#5', 'addres 5');
+
 INSERT INTO cars
 (park_id, model, year, price)
 VALUES
-(1, 'VM Jetta', 2012, 35),
-(1, 'VM T5', 2015, 47),
-(1, 'Skoda Octavia', 2019, 55),
-(2, 'Elantra', 2017, 40),
-(2, 'Kia soul', 2019, 50),
-(2, 'Skoda Octavia', 2019, 55),
-(3, 'Kia soul', 2019, 50),
-(3, 'Mercedes-Benz', 2017, 60),
-(3, 'Mercedes-Benz', 2019, 65),
-(4, 'VM Jetta', 2012, 35),
-(4, 'VM T5', 2015, 47),
-(5, 'Elantra', 2017, 40),
-(5, 'Skoda Octavia', 2019, 55),
-(5, 'Skoda Octavia', 2019, 65),
-(5, 'Mercedes-Benz', 2019, 65),
-(5, 'Mercedes-Benz', 2017, 60);
+    (1, 'VM Jetta', 2012, 35),
+    (1, 'VM T5', 2015, 47),
+    (1, 'Skoda Octavia', 2019, 55),
+    (2, 'Elantra', 2017, 40),
+    (2, 'Kia soul', 2019, 50),
+    (2, 'Skoda Octavia', 2019, 55),
+    (3, 'Kia soul', 2019, 50),
+    (3, 'Mercedes-Benz', 2017, 60),
+    (3, 'Mercedes-Benz', 2019, 65),
+    (4, 'VM Jetta', 2012, 35),
+    (4, 'VM T5', 2015, 47),
+    (5, 'Elantra', 2017, 40),
+    (5, 'Skoda Octavia', 2019, 55),
+    (5, 'Skoda Octavia', 2019, 65),
+    (5, 'Mercedes-Benz', 2019, 65),
+    (5, 'Mercedes-Benz', 2017, 60);
 
 
 INSERT INTO customers
@@ -84,17 +93,6 @@ VALUES
     (5, 2, 'firs_addr 15', 'second_addr 20'),
     (3, 3, 'firs_addr 15', 'second_addr 20'),
     (1, 5, 'firs_addr 15', 'second_addr 20');
-
-
-INSERT INTO parks
-(serial_number, address)
-VALUES
-    ('#1', 'addres 1'),
-    ('#2', 'addres 2'),
-    ('#3', 'addres 3'),
-    ('#4', 'addres 4'),
-    ('#5', 'addres 5');
-
 
 # >>>>> 4. Модифікації будь-якого запису (наприклад, змінити серійний номер автопарку)
 
@@ -161,14 +159,14 @@ GROUP BY park;
 
 # >>>>> 8. Додати/змінити колонку за допомогою команди ALTER TABLE
 
-    ALTER TABLE autoparc.parks
+ALTER TABLE autoparc.parks
     ADD COLUMN new_col VARCHAR(250) NOT NULL AFTER address;
 
 ALTER TABLE autoparc.parks
     CHANGE COLUMN new_col other_col VARCHAR(250) NOT NULL ;
 
 ALTER TABLE autoparc.parks
-DROP COLUMN other_col;
+    DROP COLUMN other_col;
 
 # =====================================================================
 

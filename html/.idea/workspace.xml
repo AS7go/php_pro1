@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="759a17a5-be88-4dfa-9393-f3361264aa9e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.docker/php/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/.docker/php/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/dd0e995f-b910-4f59-a4a6-b366ca7a10c3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/dd0e995f-b910-4f59-a4a6-b366ca7a10c3.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alter_update_select.sql" beforeDir="false" afterPath="$PROJECT_DIR$/alter_update_select.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,22 +39,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "database.data.extractors.current.export.id": "SQL-Insert-Multirow.sql.groovy",
-    "last_opened_file_path": "/home/aleksandr/1_bd2",
-    "settings.editor.selected.configurable": "web-ide.project.structure",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;database.data.extractors.current.export.id&quot;: &quot;SQL-Insert-Multirow.sql.groovy&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/var/www/html&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;web-ide.project.structure&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -121,6 +127,18 @@
       <workItem from="1669854207012" duration="4853000" />
       <workItem from="1669926786409" duration="690000" />
       <workItem from="1669978329411" duration="43448000" />
+      <workItem from="1670027758093" duration="1103000" />
+      <workItem from="1670066887236" duration="4658000" />
+      <workItem from="1670077240561" duration="567000" />
+      <workItem from="1670146113659" duration="2055000" />
+      <workItem from="1670164402947" duration="2107000" />
+      <workItem from="1670187279474" duration="2138000" />
+      <workItem from="1670191618154" duration="4013000" />
+      <workItem from="1670195740598" duration="4465000" />
+      <workItem from="1670201590223" duration="1069000" />
+      <workItem from="1670202706946" duration="1056000" />
+      <workItem from="1670203792843" duration="378000" />
+      <workItem from="1670204636063" duration="1739000" />
     </task>
     <servers />
   </component>
