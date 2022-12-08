@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="759a17a5-be88-4dfa-9393-f3361264aa9e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.docker/php/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/.docker/php/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PDO/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/b6e0ec39-d442-4351-8a17-dbd1522b4df2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/b6e0ec39-d442-4351-8a17-dbd1522b4df2.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/dd0e995f-b910-4f59-a4a6-b366ca7a10c3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/dd0e995f-b910-4f59-a4a6-b366ca7a10c3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/alter_update_select.sql" beforeDir="false" afterPath="$PROJECT_DIR$/alter_update_select.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +48,11 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;database.data.extractors.current.export.id&quot;: &quot;SQL-Insert-Multirow.sql.groovy&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/var/www/html&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/var/www/html/PDO/classes&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;web-ide.project.structure&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
@@ -57,7 +64,14 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/PDO/classes" />
+      <recent name="$PROJECT_DIR$/PDO" />
       <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/vendor" />
+      <recent name="$PROJECT_DIR$/PDO" />
     </key>
   </component>
   <component name="RunManager" selected="Docker.php/Dockerfile">
@@ -138,7 +152,12 @@
       <workItem from="1670201590223" duration="1069000" />
       <workItem from="1670202706946" duration="1056000" />
       <workItem from="1670203792843" duration="378000" />
-      <workItem from="1670204636063" duration="1739000" />
+      <workItem from="1670204636063" duration="2748000" />
+      <workItem from="1670273556773" duration="627000" />
+      <workItem from="1670285969703" duration="8638000" />
+      <workItem from="1670367241614" duration="2062000" />
+      <workItem from="1670441711592" duration="702000" />
+      <workItem from="1670505224220" duration="302000" />
     </task>
     <servers />
   </component>
