@@ -1,63 +1,60 @@
 <?php
 require __DIR__ . '/vendor/autoload.php';
 
-interface BirdEat
+
+interface MysqlInterface
 {
-    public function eat();
+    public function getData();
 }
 
-interface BirdFly
+class Mysql implements MysqlInterface
 {
-    public function fly();
-}
-
-class Swallow implements BirdEat, BirdFly
-{
-    public function eat() {
-        echo "Swallow-eat <br />";
-    }
-    public function fly() {
-        echo "Swallow-fly <br />";
+    public function getData()
+    {
+       return 'some data from database';
     }
 }
 
-//class Ostrich implements BirdEat, BirdFly
-class Ostrich implements BirdEat
+class Controller
 {
-    public function eat() {
-        echo "Ostrich-eat <br />";
+    private $adapter;
+
+    public function __construct(MysqlInterface $mysql)
+    {
+        $this->adapter = $mysql;
     }
-    public function fly() {
-//        echo "Ostrich-fly <br />";
-        throw new Exception('NO BirdFly -> Ostrich-fly !!!');
+
+    function getData()
+    {
+        $this->adapter->getData();
     }
+
 }
 
+// ======== ДЗ 10. Dependency inversion ===================================
+//  Відрефакторити приклад по принципу Dependency inversion:
 
-$obj =new Ostrich();
-$obj->eat();
-$obj->fly();
-
-
-// =====================================================================
-//ДЗ 11. Interface segregation
-//Відрефакторити приклад по принципу Interface segregation:
-
-//interface Bird
+//<?php
+//class Mysql
 //{
-//    public function eat();
-//    public function fly();
+//    public function getData()
+//    {
+//        return 'some data from database';
+//    }
 //}
 //
-//class Swallow implements Bird
+//class Controller
 //{
-//    public function eat() { }
-//    public function fly() { }
-//}
+//    private $adapter;
 //
-//class Ostrich implements Bird
-//{
-//    public function eat() { }
-//    public function fly() { /* exception */ }
+//    public function __construct(Mysql $mysql)
+//    {
+//        $this->adapter = $mysql;
+//    }
+//
+//    function getData()
+//    {
+//        $this->adapter->getData();
+//    }
 //}
 // =====================================================================

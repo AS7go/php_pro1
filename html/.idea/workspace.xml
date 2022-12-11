@@ -5,19 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="759a17a5-be88-4dfa-9393-f3361264aa9e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../homework_9/hw9_bd.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../homework_9/hw9_bd.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../homework_9/select1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../homework_9/select2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../homework_9/select_left_join.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../homework_9/select_right_join.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../homework_9/tab_customers.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Architecture_principles/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PDO/classes/Car.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PDO/classes/DB.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PDO/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/alter_update_select.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index_v1.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,6 +50,7 @@
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;php.override.implement.member.chooser.php.doc&quot;: &quot;NONE&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;web-ide.project.structure&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
@@ -167,7 +159,9 @@
       <workItem from="1670505224220" duration="6338000" />
       <workItem from="1670523830339" duration="13000" />
       <workItem from="1670634915342" duration="20248000" />
-      <workItem from="1670677551762" duration="917000" />
+      <workItem from="1670677551762" duration="2947000" />
+      <workItem from="1670687487678" duration="12498000" />
+      <workItem from="1670765130669" duration="17780000" />
     </task>
     <servers />
   </component>
