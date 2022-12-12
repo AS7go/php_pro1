@@ -1,60 +1,64 @@
 <?php
 require __DIR__ . '/vendor/autoload.php';
 
+// ======== ДЗ 12. Factory Method: Taxi =============
 
-interface MysqlInterface
+interface Taxi
 {
-    public function getData();
+    public function deliveryService();
 }
 
-class Mysql implements MysqlInterface
-{
-    public function getData()
+class TaxiFactory {
+    public function createEconomyTaxi(): Taxi
     {
-       return 'some data from database';
+        return new EconomyTaxi();
+    }
+
+    public function createStandartTaxi(): Taxi
+    {
+        return new StandartTaxi();
+    }
+
+    public function createLuxTaxi(): Taxi
+    {
+        return new LuxTaxi();
     }
 }
 
-class Controller
+class EconomyTaxi implements Taxi
 {
-    private $adapter;
-
-    public function __construct(MysqlInterface $mysql)
+    public function deliveryService()
     {
-        $this->adapter = $mysql;
+        echo "Model1 - EconomyTaxi 100 uah";
     }
-
-    function getData()
-    {
-        $this->adapter->getData();
-    }
-
 }
 
-// ======== ДЗ 10. Dependency inversion ===================================
-//  Відрефакторити приклад по принципу Dependency inversion:
+class StandartTaxi implements Taxi
+{
+    public function deliveryService()
+    {
+        echo "Model2 - StandartTaxi 200 uah";
+    }
+}
 
-//<?php
-//class Mysql
-//{
-//    public function getData()
-//    {
-//        return 'some data from database';
-//    }
-//}
-//
-//class Controller
-//{
-//    private $adapter;
-//
-//    public function __construct(Mysql $mysql)
-//    {
-//        $this->adapter = $mysql;
-//    }
-//
-//    function getData()
-//    {
-//        $this->adapter->getData();
-//    }
-//}
-// =====================================================================
+class LuxTaxi implements Taxi
+{
+    public function deliveryService()
+    {
+        echo "Model3 - LuxTaxi 300 uah";
+    }
+}
+
+$factory = new TaxiFactory();
+$economy_taxi = $factory->createEconomyTaxi();
+$standart_taxi = $factory->createStandartTaxi();
+$lux_taxi = $factory->createLuxTaxi();
+
+$economy_taxi->deliveryService();
+echo "<br />";
+$standart_taxi->deliveryService();
+echo "<br />";
+$lux_taxi->deliveryService();
+echo "<br />";
+
+
