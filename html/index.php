@@ -1,64 +1,115 @@
 <?php
 require __DIR__ . '/vendor/autoload.php';
 
-// ======== ДЗ 12. Factory Method: Taxi =============
+// ======= Factory Method =======
 
 interface Taxi
 {
-    public function deliveryService();
-}
-
-class TaxiFactory {
-    public function createEconomyTaxi(): Taxi
-    {
-        return new EconomyTaxi();
-    }
-
-    public function createStandartTaxi(): Taxi
-    {
-        return new StandartTaxi();
-    }
-
-    public function createLuxTaxi(): Taxi
-    {
-        return new LuxTaxi();
-    }
+    public function modelTaxi(string $model);
+    public function priceTaxi(int $price);
 }
 
 class EconomyTaxi implements Taxi
 {
-    public function deliveryService()
+    public function modelTaxi(string $model)
     {
-        echo "Model1 - EconomyTaxi 100 uah";
+        echo "The economy taxi delivery $model <br />";
+    }
+
+    public function priceTaxi(int $price)
+    {
+        echo "The economy taxi price $price <br />";
     }
 }
 
 class StandartTaxi implements Taxi
 {
-    public function deliveryService()
+    public function modelTaxi(string $model)
     {
-        echo "Model2 - StandartTaxi 200 uah";
+        echo "The standart taxi delivery $model <br />";
+    }
+    public function priceTaxi(int $price)
+    {
+        echo "The standart taxi price $price <br />";
     }
 }
 
 class LuxTaxi implements Taxi
 {
-    public function deliveryService()
+    public function modelTaxi(string $model)
     {
-        echo "Model3 - LuxTaxi 300 uah";
+        echo "The lux taxi delivery $model <br />";
+    }
+    public function priceTaxi(int $price)
+    {
+        echo "The lux taxi price $price <br />";
     }
 }
 
-$factory = new TaxiFactory();
-$economy_taxi = $factory->createEconomyTaxi();
-$standart_taxi = $factory->createStandartTaxi();
-$lux_taxi = $factory->createLuxTaxi();
+abstract class Creator
+{
+    abstract public function factoryMethod(): Taxi;
 
-$economy_taxi->deliveryService();
+    public function deliverTaxi(string $modelName, int $priceUAH)
+    {
+        $transport = $this->factoryMethod();
+
+        $transport->modelTaxi($modelName);
+        $transport->priceTaxi($priceUAH);
+    }
+}
+
+class EconomyTaxiCreator1 extends Creator
+{
+    public function factoryMethod(): Taxi
+    {
+        return new EconomyTaxi();
+    }
+}
+
+class StandartTaxiCreator2 extends Creator
+{
+    public function factoryMethod(): Taxi
+    {
+        return new StandartTaxi();
+    }
+}
+
+class LuxTaxiCreator3 extends Creator
+{
+    public function factoryMethod(): Taxi
+    {
+        return new LuxTaxi();
+    }
+}
+
+
+function clientCode(Creator $creator, string $model, int $price)
+{
+    $creator->deliverTaxi($model, $price);
+}
+
 echo "<br />";
-$standart_taxi->deliveryService();
+clientCode(new EconomyTaxiCreator1, 'model 1', 100);
 echo "<br />";
-$lux_taxi->deliveryService();
+clientCode(new StandartTaxiCreator2, 'model 2', 200);
+echo "<br />";
+clientCode(new LuxTaxiCreator3, 'model 3', 300);
 echo "<br />";
 
 
+// ======== ДЗ 12. Factory Method: Taxi ===================================
+//
+// Заняття 8. SOLID, Factory Method, Abstract Factory
+//
+// Побудувати систему таксі.
+//
+// Клієнтський код повинен викликати тип доставки, який у свою чергу віддаватиме машину
+// відповідного типу, яка матиме 2 методи (виведення моделі машини та виведення ціни).
+//
+// Усього буде 3 типи таксі:
+//
+// Економ
+// Стандарт
+// Люкс
+// =====================================================================
