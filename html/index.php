@@ -3,7 +3,7 @@
 require __DIR__ . '/vendor/autoload.php';
 
 
-class ContactConstruct //Contact
+class Contact1 //Contact
 {
 
     private $name;
@@ -85,9 +85,9 @@ class Contact //ContactBuilder
         return $this;
     }
 
-    public function build():ContactConstruct
+    public function build():Contact1
     {
-        $contact = new ContactConstruct(
+        $contact = new Contact1(
                 $this->name,
                 $this->surname,
                 $this->email,
