@@ -9,9 +9,8 @@ class Config
 
     public static function get(string $name): string|null
     {
-        if (is_null(self::$instance)){
+        if (is_null(self::$instance)) {
             self::$instance = new self;
-//            var_dump('init instance');
         }
         return self::$instance->getParam($name);
     }
@@ -26,8 +25,8 @@ class Config
     {
         $configs = [];
 
-        if (empty($this->configs)){
-            $configs=include BASE_DIR . '/Config/configs.php';
+        if (empty($this->configs)) {
+            $configs = include BASE_DIR . '/Config/configs.php';
         }
         return $configs;
     }
@@ -36,13 +35,13 @@ class Config
     {
         $value = null;
 
-        if (empty($keys)){
+        if (empty($keys)) {
             return $value;
         }
 
         $search = array_shift($keys);
 
-        if (array_key_exists($search, $configs)){
+        if (array_key_exists($search, $configs)) {
             $value = is_array($configs[$search]) ? $this->findParamByKeys($keys, $configs[$search]) : $configs[$search];
         }
         return $value;

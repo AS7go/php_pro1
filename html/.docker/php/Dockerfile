@@ -11,4 +11,4 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 RUN /usr/sbin/a2enmod rewrite
 COPY default.conf /etc/apache2/sites-available/000-default.conf
 
-RUN chmod -R 775 /var/www/html
+RUN chmod -R 765 /var/www/html

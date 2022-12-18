@@ -17,7 +17,6 @@ try {
     );
 
     d($pdo);
-//    d(Config::get('db.user'), Config::get('db.password'), Config::get('db.host'), Config::get('db.notused'));
 } catch (PDOException $exception) {
     d('Exception', $exception->getMessage());
 }
