@@ -8,9 +8,7 @@ RUN apt-get update && \
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-#RUN apt-get update && \
-#    apt-get upgrade -y && \
-#    apt-get install libpq-dev -y && \
-#    docker-php-ext-install pdo_pgsql && \
-#    apt-get install -y git
+RUN /usr/sbin/a2enmod rewrite
+COPY default.conf /etc/apache2/sites-available/000-default.conf
 
+RUN chmod -R 775 /var/www/html

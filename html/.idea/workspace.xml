@@ -5,7 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="759a17a5-be88-4dfa-9393-f3361264aa9e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.docker/php/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/.docker/php/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/html.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/html.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Patterns/AbstractFactory/LGFactory.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Patterns/AbstractFactory/LGLcdTV.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Patterns/AbstractFactory/LGLedTV.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Patterns/AbstractFactory/LcdTV.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Patterns/AbstractFactory/LedTV.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Patterns/AbstractFactory/SonyFactory.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Patterns/AbstractFactory/SonyLcdTV.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Patterns/AbstractFactory/SonyLedTV.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Patterns/AbstractFactory/TVFactory.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Patterns/AbstractFactory/clientCode.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Patterns/AbstractFactory/index_move_to_root_directory.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,10 +48,17 @@
       <path value="$PROJECT_DIR$/vendor/larapack/dd" />
       <path value="$PROJECT_DIR$/vendor/composer" />
       <path value="$PROJECT_DIR$/vendor/symfony/var-dumper" />
+      <path value="$PROJECT_DIR$/vendor/vlucas/phpdotenv" />
+      <path value="$PROJECT_DIR$/vendor/graham-campbell/result-type" />
+      <path value="$PROJECT_DIR$/vendor/phpoption/phpoption" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php80" />
     </include_path>
   </component>
   <component name="ProjectId" id="2I01fHRao3XVJ377kA3a4rBagg4" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -60,16 +87,17 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/Patterns/pattern_phone" />
       <recent name="$PROJECT_DIR$/PDO/classes" />
       <recent name="$PROJECT_DIR$/PDO" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/src/Patterns/AbstractFactory" />
       <recent name="$PROJECT_DIR$/src/AbstractFactory" />
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/vendor" />
     </key>
   </component>
   <component name="RunManager" selected="Docker.php/Dockerfile">
@@ -185,7 +213,13 @@
       <workItem from="1671215707821" duration="4527000" />
       <workItem from="1671234941533" duration="28845000" />
       <workItem from="1671271668148" duration="5271000" />
-      <workItem from="1671293598080" duration="7926000" />
+      <workItem from="1671293598080" duration="8667000" />
+      <workItem from="1671305037315" duration="741000" />
+      <workItem from="1671313614700" duration="9148000" />
+      <workItem from="1671324709417" duration="14460000" />
+      <workItem from="1671372192470" duration="741000" />
+      <workItem from="1671374396854" duration="5577000" />
+      <workItem from="1671393327228" duration="3636000" />
     </task>
     <servers />
   </component>

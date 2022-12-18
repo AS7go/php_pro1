@@ -2,10 +2,12 @@
     "name": "root/html",
     "autoload": {
         "psr-4": {
-            "Root\\Html\\": "src/"
+            "Config\\": "Config/",
+            "App\\": "App/"
         }
     },
     "require": {
-        "larapack/dd": "^1.1"
+        "larapack/dd": "^1.1",
+        "vlucas/phpdotenv": "^5.5"
     }
 }
