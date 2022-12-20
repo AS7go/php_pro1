@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="759a17a5-be88-4dfa-9393-f3361264aa9e" name="Changes" comment="test1">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test1.txt" afterDir="false" />
-    </list>
+    <list default="true" id="759a17a5-be88-4dfa-9393-f3361264aa9e" name="Changes" comment="new2" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -209,7 +206,7 @@
       <workItem from="1671408945933" duration="338000" />
       <workItem from="1671423106674" duration="599000" />
       <workItem from="1671478794983" duration="81000" />
-      <workItem from="1671492591234" duration="3822000" />
+      <workItem from="1671492591234" duration="4135000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1671494612314</created>
@@ -232,7 +229,21 @@
       <option name="project" value="LOCAL" />
       <updated>1671494873194</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="new1">
+      <created>1671496779384</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1671496779384</updated>
+    </task>
+    <task id="LOCAL-00005" summary="new2">
+      <created>1671496932262</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1671496932262</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -252,7 +263,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="test" />
     <MESSAGE value="test1" />
-    <option name="LAST_COMMIT_MESSAGE" value="test1" />
+    <MESSAGE value="new1" />
+    <MESSAGE value="new2" />
+    <option name="LAST_COMMIT_MESSAGE" value="new2" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
