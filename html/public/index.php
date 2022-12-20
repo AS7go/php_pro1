@@ -1,22 +1,45 @@
 <?php
 
-use Config\Config;
+class Room
+{
+    public $color='111';
 
-require_once dirname(__DIR__) . '/Config/constants.php';
-require_once BASE_DIR . '/vendor/autoload.php';
+    public function getColor()
+    {
+        echo $this->color;
+//        return $this->color;
+    }
 
-$dotenv = \Dotenv\Dotenv::createUnsafeImmutable(BASE_DIR);
-$dotenv->load();
+    public function setColor(string $color): void
+    {
+        $this->color = $color;
+    }
 
-try {
-
-    $pdo = new PDO(
-        'mysql:host=db;dbname=taxi',
-        Config::get('db.user'),
-        Config::get('db.password')
-    );
-
-    d($pdo);
-} catch (PDOException $exception) {
-    d('Exception', $exception->getMessage());
 }
+
+$obj=new Room();
+$obj->color='222';
+$obj->getColor();
+$obj->setColor('555');
+$obj->getColor();
+
+//use Config\Config;
+//
+//require_once dirname(__DIR__) . '/Config/constants.php';
+//require_once BASE_DIR . '/vendor/autoload.php';
+//
+//$dotenv = \Dotenv\Dotenv::createUnsafeImmutable(BASE_DIR);
+//$dotenv->load();
+//
+//try {
+//
+//    $pdo = new PDO(
+//        'mysql:host=db;dbname=taxi',
+//        Config::get('db.user'),
+//        Config::get('db.password')
+//    );
+//
+//    d($pdo);
+//} catch (PDOException $exception) {
+//    d('Exception', $exception->getMessage());
+//}
