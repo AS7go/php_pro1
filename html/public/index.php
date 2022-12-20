@@ -2,26 +2,49 @@
 
 class Room
 {
-    public $color='111';
+    public static $location = "wwwww";
 
-    public function getColor()
+    public static function seyWel()
     {
-        echo $this->color;
-//        return $this->color;
-    }
-
-    public function setColor(string $color): void
-    {
-        $this->color = $color;
+        echo 'stati method';
     }
 
 }
 
-$obj=new Room();
-$obj->color='222';
-$obj->getColor();
-$obj->setColor('555');
-$obj->getColor();
+echo Room::$location = 'ddd';
+echo "<br />";
+Room::seyWel();
+echo "<br />";
+echo "<br />";
+
+$myRoom = new Room();
+echo Room::$location;
+echo "<br />";
+Room::seyWel();
+
+//class Room
+//{
+//    private $color='111';
+////    public $color='111';
+//
+//    public function getColor()
+//    {
+//        echo $this->color;
+////        return $this->color;
+//    }
+//
+//    public function setColor(string $color)
+//    {
+//        $this->color = $color;
+//    }
+//
+//}
+//
+//$obj=new Room();
+////$obj->color='222';
+////$obj->getColor();
+//$obj->setColor('533355');
+//$obj->getColor();
 
 //use Config\Config;
 //
