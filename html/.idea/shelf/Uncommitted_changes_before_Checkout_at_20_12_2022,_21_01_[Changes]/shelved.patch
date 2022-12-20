@@ -1,0 +1,18 @@
+Index: public/index.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?php\n\nclass Room\n{\n    public $color='111';\n\n    public function getColor()\n    {\n        echo $this->color;\n//        return $this->color;\n    }\n\n    public function setColor(string $color): void\n    {\n        $this->color = $color;\n    }\n\n}\n\n$obj=new Room();\n$obj->color='222';\n$obj->getColor();\n$obj->setColor('555');\n$obj->getColor();\n\n//use Config\\Config;\n//\n//require_once dirname(__DIR__) . '/Config/constants.php';\n//require_once BASE_DIR . '/vendor/autoload.php';\n//\n//$dotenv = \\Dotenv\\Dotenv::createUnsafeImmutable(BASE_DIR);\n//$dotenv->load();\n//\n//try {\n//\n//    $pdo = new PDO(\n//        'mysql:host=db;dbname=taxi',\n//        Config::get('db.user'),\n//        Config::get('db.password')\n//    );\n//\n//    d($pdo);\n//} catch (PDOException $exception) {\n//    d('Exception', $exception->getMessage());\n//}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/public/index.php b/public/index.php
+--- a/public/index.php	
++++ b/public/index.php	
+@@ -15,6 +15,7 @@
+         $this->color = $color;
+     }
+ 
++
+ }
+ 
+ $obj=new Room();
