@@ -4,23 +4,18 @@ class Room
 {
     public static $location = "wwwww";
 
-    public static function seyWel()
+    public static function seyWel1()
     {
         echo 'stati method';
     }
-
 }
 
-echo Room::$location = 'ddd';
-echo "<br />";
-Room::seyWel();
-echo "<br />";
-echo "<br />";
-
-$myRoom = new Room();
 echo Room::$location;
-echo "<br />";
-Room::seyWel();
+$myRoom=new Room();
+echo $myRoom::seyWel1();
+
+
+
 
 //class Room
 //{
