@@ -9,15 +9,7 @@ $dotenv = \Dotenv\Dotenv::createUnsafeImmutable(BASE_DIR);
 $dotenv->load();
 
 try {
-
-//    $pdo = new PDO(
-//        'mysql:host=db;dbname=taxi',
-//        Config::get('db.user'),
-//        Config::get('db.password')
-//    );
-
-//    d($pdo);
-    d(\Core\Db::connect());
+    dd(\Core\Db::connect());
 } catch (PDOException $exception) {
-    d('Exception', $exception->getMessage());
+    dd('Exception', $exception->getMessage());
 }
