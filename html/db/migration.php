@@ -16,12 +16,15 @@ class Migration
     public function __construct()
     {
         try {
+            Db::connect()->beginTransaction();
             //check migration table & create
             $this->checkMigrationsTable();
             //run all migrations
             $this->runAllMigrations();
+            Db::connect()->commit();
         } catch (PDOException $exception){
             d($exception->getMessage(), $exception->getTrace());
+            Db::connect()->rollBack();
         }
     }
 
