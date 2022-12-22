@@ -9,7 +9,16 @@ $dotenv = \Dotenv\Dotenv::createUnsafeImmutable(BASE_DIR);
 $dotenv->load();
 
 try {
-    dd(\Core\Db::connect());
+    $router = new \Core\Router();
+
+    require_once BASE_DIR . '/routes/web.php';
+    if (!preg_match('/assets/i', $_SERVER['REQUEST_URI'])){
+        $router->dispatch($_SERVER['REQUEST_URI']);
+    }
+
+//    dd(\Core\Db::connect());
 } catch (PDOException $exception) {
-    dd('Exception', $exception->getMessage());
+    d('PDOException', $exception->getMessage());
+} catch (Exeption $exception){
+    d('Exeption', $exception->getMessage());
 }
