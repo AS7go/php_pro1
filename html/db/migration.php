@@ -60,13 +60,9 @@ class Migration
     protected function checkMigrationsTable()
     {
         $table = $this->getTableName(self::MIGRATIONS_TABLE);
-//        d($table);
-//        d('- Checking migration table query -');
-//        $query =Db::connect()->prepare("SHOW TABLES LIKE '" . self::MIGRATIONS_TABLE . "'");
         $query =Db::connect()->prepare("SHOW TABLES LIKE '$table'");
         $query->execute();
 
-//        dd("SHOW TABLES LIKE '$table'",$query->fetch());
         if (!$query->fetch()) {
             $this->createMigrationsTable();
         }
