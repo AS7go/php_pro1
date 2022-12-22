@@ -34,6 +34,7 @@ class Router
         $url=trim($url, '/');
         $url=$this->removeQueryVariable($url);
 //        d($url);
+        
         d($url, $_GET); //отфільтрує, но в $_GET буде після '?' ...
     }
 
