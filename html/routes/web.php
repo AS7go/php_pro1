@@ -10,11 +10,11 @@
 // /parks/create - create
 // /parks/store - store
 // /parks/4/destroy - delete
-//
+
 $router->add('parks/{id:\d+}/update', [
-    'controller'=>'Controller',
-    'action'=>'index',
-    'method'=>'POST'
+    'controller' => 'Controller',
+    'action' => 'index',
+    'method' => 'POST'
 ]);
 
 //$router->add('parks/{id:\d+}/update',[

@@ -17,25 +17,53 @@ class Router
      */
     public function add(string $route, array $params = [])
     {
-        $route = preg_replace('/\//','\\/',$route);
-        $route = preg_replace('/\{([a-z]+)\}/','(?P<\1>[a-z-]+)',$route);
-        $route = preg_replace('/\{([a-z]+):([^\}]+)\}/','(?P<\1>\2)',$route);
+        $route = preg_replace('/\//', '\\/', $route);
+        $route = preg_replace('/\{([a-z]+)\}/', '(?P<\1>[a-z-]+)', $route);
+        $route = preg_replace('/\{([a-z]+):([^\}]+)\}/', '(?P<\1>\2)', $route);
 
         $route = "/^{$route}$/i";
-        $this ->routes[$route] = $params;
-
-//        d($this->routes);
-//        d($route, $params);
+        $this->routes[$route] = $params;
     }
 
     public function dispatch(string $url)
     {
-        d($url); //http://127.0.0.1/parks/61/update?category=2
-        $url=trim($url, '/');
-        $url=$this->removeQueryVariable($url);
-//        d($url);
-        
-        d($url, $_GET); //отфільтрує, но в $_GET буде після '?' ...
+        $url = trim($url, '/');
+        $url = $this->removeQueryVariable($url);
+        d($this->params);
+
+        if ($this->match($url)) {
+            d($this->params);
+        }
+    }
+
+    protected function match(string $url)
+    {
+        foreach ($this->routes as $route => $params) {
+            if (preg_match($route, $url, $match)) {
+                $this->params = $this->setParams($route, $match, $params);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    protected function setParams(string $route, array $matches, array $params): array
+    {
+        preg_match_all('/\(\?P<[\w]+>\\\\(\w[\+])\)/', $route, $types);
+        $matches = array_filter($matches, 'is_string', ARRAY_FILTER_USE_KEY);
+
+        if (!empty($types)) {
+            $step = 0;
+            $lastKey = array_key_last($types);
+
+            foreach ($matches as $key => $match) {
+                $types[$lastKey] = str_replace('+', '', $types[$lastKey]);
+                settype($match, $this->convertTypes[$types[$lastKey][$step]]);
+                $params[$key] = $match;
+                $step++; //parks/4/show  parks/4/car/1
+            }
+        }
+        return $params;
     }
 
     protected function removeQueryVariable(string $url)
@@ -44,7 +72,7 @@ class Router
         // parks/4?category=2
         // (parks/4)?(category=2)
         // ($1)?($2) повернути до знаку ?
-//        return preg_replace('/([\w\/]+)\?([\w\/=\d]+)/i', '$1', $url);
+        // ($1)
         return preg_replace('/([\w\/]+)\?([\w\/=\d]+)/i', '$1', $url);
     }
 }

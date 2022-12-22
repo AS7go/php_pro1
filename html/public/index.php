@@ -12,13 +12,11 @@ try {
     $router = new \Core\Router();
 
     require_once BASE_DIR . '/routes/web.php';
-    if (!preg_match('/assets/i', $_SERVER['REQUEST_URI'])){
+    if (!preg_match('/assets/i', $_SERVER['REQUEST_URI'])) {
         $router->dispatch($_SERVER['REQUEST_URI']);
     }
-
-//    dd(\Core\Db::connect());
 } catch (PDOException $exception) {
     d('PDOException', $exception->getMessage());
-} catch (Exeption $exception){
+} catch (Exeption $exception) {
     d('Exeption', $exception->getMessage());
 }
