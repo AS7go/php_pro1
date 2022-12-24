@@ -29,18 +29,33 @@ class Router
     {
         $url = trim($url, '/');
         $url = $this->removeQueryVariable($url);
-        d($this->params);
+//        d($this->params);
 
         if ($this->match($url)) {
+            $this->checkRequestMethod();
             d($this->params);
+        }
+    }
+
+    protected function checkRequestMethod()
+    {
+        if (array_key_exists('method', $this->params)) {
+            $requestMethod = strtolower($_SERVER['REQUEST_METHOD']);
+
+            if ($requestMethod !== strtolower($this->params['method'])) {
+                throw new \RouterException("Method '" . $_SERVER['REQUEST_METHOD'] ."' not allowed for this route");
+//                throw new \Exception("Method '" . $_SERVER['REQUEST_METHOD'] ."' not allowed for this route");
+            }
+
+            unset($this->params['method']);
         }
     }
 
     protected function match(string $url)
     {
         foreach ($this->routes as $route => $params) {
-            if (preg_match($route, $url, $match)) {
-                $this->params = $this->setParams($route, $match, $params);
+            if (preg_match($route, $url, $matches)) {
+                $this->params = $this->setParams($route, $matches, $params);
                 return true;
             }
         }

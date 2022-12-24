@@ -12,3 +12,5 @@ RUN /usr/sbin/a2enmod rewrite
 COPY default.conf /etc/apache2/sites-available/000-default.conf
 
 RUN chmod -R 765 /var/www/html
+
+#RUN php /var/www/html/db/migration.php

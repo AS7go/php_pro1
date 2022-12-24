@@ -1,7 +1,6 @@
 <?php
 require_once dirname(__DIR__) . '/Config/constants.php';
 require_once BASE_DIR . '/vendor/autoload.php';
-//require_once dirname(__DIR__) . '/vendor/autoload.php';
 
 $dotenv = \Dotenv\Dotenv::createUnsafeImmutable(BASE_DIR);
 $dotenv->load();
@@ -23,8 +22,8 @@ class Migration
             $this->runAllMigrations();
             Db::connect()->commit();
         } catch (PDOException $exception){
-            d($exception->getMessage(), $exception->getTrace());
             Db::connect()->rollBack();
+            d($exception->getMessage(), $exception->getTrace());
         }
     }
 

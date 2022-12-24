@@ -8,6 +8,11 @@ require_once BASE_DIR . '/vendor/autoload.php';
 $dotenv = \Dotenv\Dotenv::createUnsafeImmutable(BASE_DIR);
 $dotenv->load();
 
+class RouterException extends Exception // кастомный Exception
+{
+}
+
+
 try {
     $router = new \Core\Router();
 
@@ -15,8 +20,10 @@ try {
     if (!preg_match('/assets/i', $_SERVER['REQUEST_URI'])) {
         $router->dispatch($_SERVER['REQUEST_URI']);
     }
+} catch (RouterException $exception) {
+    d('RouterException', $exception->getTrace(), $exception->getMessage());
 } catch (PDOException $exception) {
     d('PDOException', $exception->getMessage());
-} catch (Exeption $exception) {
+} catch (Exception $exception) {
     d('Exeption', $exception->getMessage());
 }
