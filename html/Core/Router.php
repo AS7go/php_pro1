@@ -17,15 +17,15 @@ class Router
      */
     public function add(string $route, array $params = [])
     {
-        d($route);
+//        d($route);
         $route = preg_replace('/\//', '\\/', $route);
         $route = preg_replace('/\{([a-z_]+)\}/', '(?P<\1>[a-z-]+)', $route);
-        d($route);
+//        d($route);
         $route = preg_replace('/\{([a-z_]+):([^\}]+)\}/', '(?P<\1>\2)', $route);
-        d($route);
+//        d($route);
 
         $route = "/^{$route}$/i";
-        d($route);
+//        d($route);
         $this->routes[$route] = $params;
 
     }
@@ -100,7 +100,7 @@ class Router
     protected function setParams(string $route, array $matches, array $params): array
     {
         preg_match_all('/\(\?P<[\w]+>\\\\(\w[\+])\)/', $route, $types);
-        d($matches, $route, $types);
+//        d($matches, $route, $types);
         $matches = array_filter($matches, 'is_string', ARRAY_FILTER_USE_KEY);
 
         if (!empty($types)) {
