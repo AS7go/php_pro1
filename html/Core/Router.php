@@ -30,6 +30,7 @@ class Router
         $url = trim($url, '/');
         $url = $this->removeQueryVariable($url);
 
+
         if ($this->match($url)) {
             $this->checkRequestMethod();
             d($this->params);
