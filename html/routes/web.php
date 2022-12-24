@@ -17,11 +17,18 @@
 //    'method' => 'POST'
 //]);
 
-$router->add('parks/{id:\d+}/update', [
-    'controller' => 'Controller',
-    'action' => 'update',
-    'method' => 'POST'
+$router->add('parks/{id:\d+}/show', [
+    'controller' => \App\Controllers\ParksController::class,
+    'action' => 'show',
+    'method' => 'GET'
 ]);
+
+//$router->add('parks/{park_id:\d+}/cars/{car_id:\d+}/show', [
+//    'controller' => \App\Controllers\ParksController::class,
+//    'action' => 'show',
+//    'method' => 'GET'
+//]);
+
 
 //$router->add('parks/{id:\d+}/update',[
 //    'controller'=>ParksController::class,

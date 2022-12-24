@@ -17,12 +17,17 @@ class Router
      */
     public function add(string $route, array $params = [])
     {
+        d($route);
         $route = preg_replace('/\//', '\\/', $route);
-        $route = preg_replace('/\{([a-z]+)\}/', '(?P<\1>[a-z-]+)', $route);
-        $route = preg_replace('/\{([a-z]+):([^\}]+)\}/', '(?P<\1>\2)', $route);
+        $route = preg_replace('/\{([a-z_]+)\}/', '(?P<\1>[a-z-]+)', $route);
+        d($route);
+        $route = preg_replace('/\{([a-z_]+):([^\}]+)\}/', '(?P<\1>\2)', $route);
+        d($route);
 
         $route = "/^{$route}$/i";
+        d($route);
         $this->routes[$route] = $params;
+
     }
 
     public function dispatch(string $url)
@@ -33,8 +38,38 @@ class Router
 
         if ($this->match($url)) {
             $this->checkRequestMethod();
-            d($this->params);
+            $controller = $this->getController();
+            $action = $this->getAction($controller);
+
+            if ($controller->before($action)){
+                call_user_func_array([$controller, $action], $this->params);
+                $controller->after($action);
+            }else{
+                dd('error');
+            }
         }
+    }
+
+    protected function getController(): Controller
+    {
+        $controller = $this->params['controller'] ?? null;
+        if (!class_exists($controller)){
+            throw new \RouterException("Controller '{$controller}' doesn't exists");
+        }
+        unset($this->params['controller']);
+
+        return new $controller;
+    }
+
+    protected function getAction(Controller $controller): string
+    {
+        $action = $this->params['action'] ?? null;
+        if (!method_exists($controller, $action)){
+            throw new \RouterException("Action '{$action}' in '" . $controller::class . "' doesn't exists");
+        }
+        unset($this->params['action']);
+
+        return $action;
     }
 
     protected function checkRequestMethod()
@@ -65,6 +100,7 @@ class Router
     protected function setParams(string $route, array $matches, array $params): array
     {
         preg_match_all('/\(\?P<[\w]+>\\\\(\w[\+])\)/', $route, $types);
+        d($matches, $route, $types);
         $matches = array_filter($matches, 'is_string', ARRAY_FILTER_USE_KEY);
 
         if (!empty($types)) {
