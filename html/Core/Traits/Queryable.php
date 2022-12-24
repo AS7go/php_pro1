@@ -10,7 +10,8 @@ trait Queryable
     static protected string|null $tableName = "";
     static protected string $query = "";
 
-    protected array $commands =[];
+    protected array $commands = [];
+
     //Car::select(['id', 'model'...])
     public static function select(array $columns = ['*']): static
     {
@@ -22,6 +23,7 @@ trait Queryable
 
         return $obj;
     }
+
     // INSERT INTO table () VALUES ()
     public static function create(array $data): int
     {
@@ -32,16 +34,15 @@ trait Queryable
 
         $query->execute($data);
 
-        return (int) Db::connect()->lastInsertId();
+        return (int)Db::connect()->lastInsertId();
 
 //        d($data, $params);
     }
 
-//    public static function all(): static
     public static function all(): array
     {
         static::resetQuery();
-        static::$query="SELECT * FROM " . static::$tableName;
+        static::$query = "SELECT * FROM " . static::$tableName;
         $obj = new static();
         $obj->commands[] = 'all';
 
@@ -63,7 +64,7 @@ trait Queryable
 
     protected static function resetQuery()
     {
-        static::$query="";
+        static::$query = "";
     }
 
     public function get()
@@ -78,15 +79,12 @@ trait Queryable
 //            throw new \RouterException('[select] command should be called before [where]');
         }
 
-//        static::$query = "WHERE {$column} {$operator} :{$column}"; // Err PDO test
+//        static::$query = "WHERE {$column} {$operator} :{$column}"; // Test Err PDOException
         static::$query .= "WHERE {$column} {$operator} {$value}";
 
-//        d(static::$query);
         $obj = new static();
         $obj->commands[] = 'where';
-//        $obj->where();
 
-//        return new static();
         return $obj;
     }
 

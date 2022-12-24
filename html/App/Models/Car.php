@@ -8,7 +8,7 @@ class Car extends \Core\Model
 
     public function getInfo(): string
     {
-        // $this? - '?'принимает null если нет данных. $this?->name === if $this === null ? null : $this->name
+        // $this?->name == альтернатива old == if $this === null ? null : $this->name
         return $this?->model . ' - ' . $this?->price;
     }
 }

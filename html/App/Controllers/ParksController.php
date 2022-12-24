@@ -16,7 +16,15 @@ class ParksController extends Controller
 //            'year' => 2019,
 //            'price' => 20.50
 //        ]);
-//        d(Car::all());
+//
+//        Car::create([
+//            'park_id' => 1,
+//            'model' => 'Elantra',
+//            'year' => 2017,
+//            'price' => 30.70
+//        ]);
+
+        d(Car::all());
 //        d(Car::select(['model', 'price'])->where('price', '>', 15));
         d(Car::select(['model', 'price'])->where('price', '>', 15)->get());
 //        $car = new Car();

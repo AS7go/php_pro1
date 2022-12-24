@@ -41,10 +41,10 @@ class Router
             $controller = $this->getController();
             $action = $this->getAction($controller);
 
-            if ($controller->before($action)){
+            if ($controller->before($action)) {
                 call_user_func_array([$controller, $action], $this->params);
                 $controller->after($action);
-            }else{
+            } else {
                 dd('error');
             }
         }
@@ -53,7 +53,7 @@ class Router
     protected function getController(): Controller
     {
         $controller = $this->params['controller'] ?? null;
-        if (!class_exists($controller)){
+        if (!class_exists($controller)) {
             throw new \RouterException("Controller '{$controller}' doesn't exists");
         }
         unset($this->params['controller']);
@@ -64,7 +64,7 @@ class Router
     protected function getAction(Controller $controller): string
     {
         $action = $this->params['action'] ?? null;
-        if (!method_exists($controller, $action)){
+        if (!method_exists($controller, $action)) {
             throw new \RouterException("Action '{$action}' in '" . $controller::class . "' doesn't exists");
         }
         unset($this->params['action']);
@@ -78,7 +78,7 @@ class Router
             $requestMethod = strtolower($_SERVER['REQUEST_METHOD']);
 
             if ($requestMethod !== strtolower($this->params['method'])) {
-                throw new \RouterException("Method '" . $_SERVER['REQUEST_METHOD'] ."' not allowed for this route");
+                throw new \RouterException("Method '" . $_SERVER['REQUEST_METHOD'] . "' not allowed for this route");
 //                throw new \Exception("Method '" . $_SERVER['REQUEST_METHOD'] ."' not allowed for this route");
             }
 
