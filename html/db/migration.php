@@ -24,7 +24,6 @@ class Migration
         } catch (PDOException $exception) {
             Db::connect()->rollBack();
             d($exception->getMessage());
-//            d($exception->getMessage(), $exception->getTrace());
         }
     }
 

@@ -1,5 +1,5 @@
 <?php
-// http://127.0.0.1/parks/75/show
+
 use Config\Config;
 
 require_once dirname(__DIR__) . '/Config/constants.php';
@@ -21,9 +21,11 @@ try {
         $router->dispatch($_SERVER['REQUEST_URI']);
     }
 } catch (RouterException $exception) {
-    d('RouterException', $exception->getTrace(), $exception->getMessage());
+    d('RouterException', $exception->getMessage(), $exception->getTrace());
 } catch (Exception $exception) {
     d('PDOException', $exception->getMessage());
 } catch (PDOException $exception) {
     d('Exeption', $exception->getMessage());
 }
+
+// http://127.0.0.1/parks/75/show

@@ -26,6 +26,7 @@ class ParksController extends Controller
 
         d(Car::all());
 //        d(Car::select(['model', 'price'])->where('price', '>', 15));
+        echo 'Out \'Select\'';
         d(Car::select(['model', 'price'])->where('price', '>', 15)->get());
 //        $car = new Car();
 //        d($car->where('price', '>', 15));

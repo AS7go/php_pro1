@@ -35,8 +35,6 @@ trait Queryable
         $query->execute($data);
 
         return (int)Db::connect()->lastInsertId();
-
-//        d($data, $params);
     }
 
     public static function all(): array
@@ -47,14 +45,12 @@ trait Queryable
         $obj->commands[] = 'all';
 
         return $obj->get();
-//        return $obj;
     }
 
     protected static function prepareQueryParams(array $fields): array
     {
         $keys = array_keys($fields);
         $placeholders = preg_filter('/^/', ':', $keys);
-//        d($keys, $placeholders);
 
         return [
             'keys' => implode(', ', $keys),
@@ -76,10 +72,8 @@ trait Queryable
     {
         if (!$this->can(['select'])) {
             throw new \Exception('[select] command should be called before [where]');
-//            throw new \RouterException('[select] command should be called before [where]');
         }
 
-//        static::$query = "WHERE {$column} {$operator} :{$column}"; // Test Err PDOException
         static::$query .= "WHERE {$column} {$operator} {$value}";
 
         $obj = new static();
