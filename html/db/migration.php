@@ -1,7 +1,6 @@
 <?php
 require_once dirname(__DIR__) . '/Config/constants.php';
 require_once BASE_DIR . '/vendor/autoload.php';
-//require_once dirname(__DIR__) . '/vendor/autoload.php';
 
 $dotenv = \Dotenv\Dotenv::createUnsafeImmutable(BASE_DIR);
 $dotenv->load();
@@ -22,9 +21,9 @@ class Migration
             //run all migrations
             $this->runAllMigrations();
             Db::connect()->commit();
-        } catch (PDOException $exception){
-            d($exception->getMessage(), $exception->getTrace());
+        } catch (PDOException $exception) {
             Db::connect()->rollBack();
+            d($exception->getMessage());
         }
     }
 
@@ -32,19 +31,19 @@ class Migration
     {
         d('- Fetching migrations ... -');
         $migrations = scandir(self::SCRIPTS_DIR);
-        $migrations = array_values(array_diff($migrations, ['.','..',self::MIGRATIONS_TABLE . '.sql']));
+        $migrations = array_values(array_diff($migrations, ['.', '..', self::MIGRATIONS_TABLE . '.sql']));
 
-        foreach ($migrations as $migration){
+        foreach ($migrations as $migration) {
             $table = $this->getTableName($migration);
 
-            if (!$this->checkIfMigrationWasRun($migration)){
+            if (!$this->checkIfMigrationWasRun($migration)) {
                 d("- Run [{$table}] ...");
                 $script = file_get_contents(self::SCRIPTS_DIR . $migration);
                 $query = Db::connect()->prepare($script);
 
-                if($query->execute()){
+                if ($query->execute()) {
                     $this->insertIntoMigrations($migration);
-                     d("- [{$table}] done! -");
+                    d("- [{$table}] done! -");
                 }
             }
         }
@@ -57,10 +56,11 @@ class Migration
         $query->bindParam('name', $fileName);
         $query->execute();
     }
+
     protected function checkMigrationsTable()
     {
         $table = $this->getTableName(self::MIGRATIONS_TABLE);
-        $query =Db::connect()->prepare("SHOW TABLES LIKE '$table'");
+        $query = Db::connect()->prepare("SHOW TABLES LIKE '$table'");
         $query->execute();
 
         if (!$query->fetch()) {
@@ -74,9 +74,9 @@ class Migration
         $script = file_get_contents(self::SCRIPTS_DIR . self::MIGRATIONS_TABLE . '.sql');
         $query = Db::connect()->prepare($script);
 
-        $text=match ($query->execute()){
-            true=>'- Migrations table was created! OK -',
-            false=>'- Failed! -'
+        $text = match ($query->execute()) {
+            true => '- Migrations table was created! OK -',
+            false => '- Failed! -'
         };
 
         d($text);
@@ -86,7 +86,7 @@ class Migration
 
     protected function getTableName(string $fileName): string
     {
-        return preg_replace('/[\d_+]/i', '',$fileName);
+        return preg_replace('/[\d_+]/i', '', $fileName);
     }
 
     protected function checkIfMigrationWasRun(string $migration): bool
@@ -95,6 +95,8 @@ class Migration
         $query->bindParam('name', $migration);
         $query->execute();
 
-        return (bool) $query->fetch();
+        return (bool)$query->fetch();
     }
-} new Migration();
+}
+
+new Migration();
