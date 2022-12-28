@@ -37,10 +37,12 @@ class AuthController extends Controller
     {
         $fields = filter_input_array(INPUT_POST, $_POST);
         $validator = new LoginValidator();
-        d($validator);
 
-        $result = AuthService::call($fields, $validator);
+        if(AuthService::call($fields, $validator)){
+            redirect('admin/dashboard');
+        }
 
-        d($result, $validator);
+        View::render('auth/login', $this->getErrors($fields, $validator, ['email_error' => 'Email already exists']));
+
     }
 }
