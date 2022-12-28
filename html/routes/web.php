@@ -44,6 +44,16 @@ $router->add(
     ]
 );
 
+
+$router->add(
+    'auth/verify',
+    [
+        'controller' => \App\Controllers\AuthController::class,
+        'action' => 'verify',
+        'method' => 'POST'
+    ]
+);
+
 // ====== work =====
 //$router->add('parks/{id:\d+}/show', [
 //    'controller' => \App\Controllers\ParksController::class,

@@ -2,7 +2,9 @@
 
 namespace App\Controllers;
 
+use App\Services\AuthService;
 use App\Services\Users\CreateService;
+use App\Validators\Auth\LoginValidator;
 use App\Validators\Auth\SighUpValidator;
 use Core\Controller;
 use Core\View;
@@ -28,10 +30,17 @@ class AuthController extends Controller
             redirect('login');
         }
 
-        $data['data'] = $fields;
-        $data += array_merge($validator->getErrors(), ['email_error' => 'Email already exists']);
+        View::render('auth/register', $this->getErrors($fields, $validator, ['email_error' => 'Email already exists']));
+    }
 
-        dd($data);
-        View::render('auth/register', $data);
+    public function verify()
+    {
+        $fields = filter_input_array(INPUT_POST, $_POST);
+        $validator = new LoginValidator();
+        d($validator);
+
+        $result = AuthService::call($fields, $validator);
+
+        d($result, $validator);
     }
 }
