@@ -17,11 +17,40 @@
 //    'method' => 'POST'
 //]);
 
-$router->add('parks/{id:\d+}/show', [
-    'controller' => \App\Controllers\ParksController::class,
-    'action' => 'show',
-    'method' => 'GET'
-]);
+$router->add(
+    'login',
+    [
+        'controller' => \App\Controllers\AuthController::class,
+        'action' => 'login',
+        'method' => 'GET'
+    ]
+);
+
+$router->add(
+    'register',
+    [
+        'controller' => \App\Controllers\AuthController::class,
+        'action' => 'register',
+        'method' => 'GET'
+    ]
+);
+
+$router->add(
+    'auth/signup',
+    [
+        'controller' => \App\Controllers\AuthController::class,
+        'action' => 'signup',
+        'method' => 'POST'
+    ]
+);
+
+// ====== work =====
+//$router->add('parks/{id:\d+}/show', [
+//    'controller' => \App\Controllers\ParksController::class,
+//    'action' => 'show',
+//    'method' => 'GET'
+//]);
+// =================
 
 //$router->add('parks/{park_id:\d+}/cars/{car_id:\d+}/show', [
 //    'controller' => \App\Controllers\ParksController::class,
