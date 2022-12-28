@@ -9,7 +9,7 @@ class BaseValidator
     public function validate(array $fields): bool
     {
         foreach ($fields as $key => $value){
-            d($key, $value, $this->rules[$key], preg_match($this->rules[$key], $value));
+//            d($key, $value, $this->rules[$key], preg_match($this->rules[$key], $value));
             if (!empty($this->rules[$key]) && preg_match($this->rules[$key], $value)) {
                 unset($this->errors["{$key}_error"]);
             }
@@ -22,5 +22,4 @@ class BaseValidator
     {
         return $this->errors;
     }
-
 }
