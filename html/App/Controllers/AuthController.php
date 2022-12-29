@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Helpers\Session;
 use App\Services\AuthService;
 use App\Services\Users\CreateService;
 use App\Validators\Auth\LoginValidator;
@@ -13,6 +14,7 @@ class AuthController extends Controller
 {
     public function login()
     {
+        Session::destroy();
         View::render('auth/login');
     }
 
@@ -38,7 +40,8 @@ class AuthController extends Controller
         $fields = filter_input_array(INPUT_POST, $_POST);
         $validator = new LoginValidator();
 
-        if(AuthService::call($fields, $validator)){
+        if(AuthService::call($fields, $validator, true)){
+//        if(AuthService::call($fields, $validator)){ //для проверки
             redirect('admin/dashboard');
         }
 
