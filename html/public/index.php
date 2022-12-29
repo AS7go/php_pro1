@@ -32,4 +32,5 @@ try {
     d('Exeption', $exception->getMessage());
 }
 // test
+// http://127.0.0.1/register
 // http://127.0.0.1/parks/75/show
