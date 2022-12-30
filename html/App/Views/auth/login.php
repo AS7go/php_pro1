@@ -1,5 +1,6 @@
 <?php
 \Core\View::render('blocks/header', ['pageTitle' => 'Login']);
+$errors = $errors ?? [];
 ?>
     <div class="container">
         <div class="row">
@@ -10,13 +11,14 @@
                         <div class="mb-3">
                             <label for="exampleInputEmail" class="form-label">Email address</label>
                             <input type="email" class="form-control" id="exampleInputEmail"
-                                   aria-describedby="emailHelp" name="email">
+                                   aria-describedby="emailHelp" name="email" value="<?= $fields['email'] ?? '' ?>">
                             <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputPassword" class="form-label">Password</label>
                             <input type="password" class="form-control" id="exampleInputPassword" name="password">
                         </div>
+                        <?= showInputError('password_error', $errors); ?>
                     </div>
                     <div class="card-footer">
                         <div class="mb-3 form-check">

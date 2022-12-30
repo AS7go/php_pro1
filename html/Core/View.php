@@ -11,7 +11,6 @@ class View
         if (!is_readable($file)){
             throw new \Exception("[{$file}] not found or not readable", 404);
         }
-
         extract($args, EXTR_SKIP);
 
         require $file;
