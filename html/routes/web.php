@@ -9,6 +9,15 @@ $router->add(
     ]
 );
 
+$router->add( //
+    'logout',
+    [
+        'controller' => \App\Controllers\AuthController::class,
+        'action' => 'logout',
+        'method' => 'GET'
+    ]
+);
+
 $router->add(
     'login',
     [

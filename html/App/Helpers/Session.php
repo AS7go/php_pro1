@@ -14,12 +14,15 @@ class Session
         return $_SESSION['user_data']['id'] ?? null;
     }
 
-    public static function setUserData($id, ...$args)
+//    public static function setUserData($id, ...$args)
+    public static function setUserData($id, $options = [])
     {
         $options = array_merge(
             ['id' => $id],
-            $args
+            $options
         );
+//        dd($options);
+
         $_SESSION['user_data'] = array_merge(
             $_SESSION['user_data'] ?? [],
             $options
@@ -27,7 +30,7 @@ class Session
     }
     public static function isUser(): bool
     {
-        dd($_SESSION['user_data']);
+//        dd($_SESSION['user_data']);
         return $_SESSION['user_data']['is_user'] ?? false;
     }
 
