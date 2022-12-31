@@ -10,7 +10,7 @@
                 Home
             </button>
 <!--            <div class="collapse show" id="home-collapse">-->
-            <div class="collapse show" id="home-collapse">
+            <div class="collapse" id="home-collapse">
                 <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                     <li><a href="#" class="d-inline-flex text-decoration-none rounded">Overview</a></li>
                     <li><a href="#" class="d-inline-flex text-decoration-none rounded">Updates</a></li>
