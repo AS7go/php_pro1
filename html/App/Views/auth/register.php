@@ -18,7 +18,7 @@ $errors = $errors ?? [];
                                    value="<?= $fields['name'] ?? '' ?>" placeholder="Your name">
                         </div>
 
-                        <?= showInputError('name_error', $errors); ?>
+                        <?= showInputError('name', $errors); ?>
 
                         <div class="mb-3">
                             <label for="surname" class="form-label">Surname</label>
@@ -27,7 +27,7 @@ $errors = $errors ?? [];
                                    placeholder="Your surname">
                         </div>
 
-                        <?= showInputError('surname_error', $errors); ?>
+                        <?= showInputError('surname', $errors); ?>
 
                         <div class="mb-3">
                             <label for="nickname" class="form-label">Nickname</label>
@@ -36,7 +36,7 @@ $errors = $errors ?? [];
                                    placeholder="Your nickname">
                         </div>
 
-                        <?= showInputError('user_nm_error', $errors); ?>
+                        <?= showInputError('user_nm', $errors); ?>
 
                         <div class="mb-3">
                             <label for="exampleInputEmail" class="form-label">Email address</label>
@@ -45,13 +45,13 @@ $errors = $errors ?? [];
                                    placeholder="Your email">
                             <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
                         </div>
-<!--                        --><?php //= showInputError('email_error', $errors); ?>
+<!--                        --><?php //= showInputError('email', $errors); ?>
 
                         <div class="mb-3">
                             <label for="exampleInputPassword" class="form-label">Password</label>
                             <input type="password" class="form-control" id="exampleInputPassword" name="password">
                         </div>
-                        <?= showInputError('password_error', $errors); ?>
+                        <?= showInputError('password', $errors); ?>
                     </div>
                     <div class="card-footer">
                         <button type="submit" class="btn btn-primary">Create an account</button>

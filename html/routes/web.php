@@ -62,3 +62,59 @@ $router->add(
         'method' => 'GET'
     ]
 );
+
+// Admin Parks
+
+$router->add(
+    'admin/parks',
+    [
+        'controller' => \App\Controllers\Admin\ParksController::class,
+        'action' => 'index',
+        'method' => 'GET'
+    ]
+);
+
+$router->add(
+    'admin/parks/create',
+    [
+        'controller' => \App\Controllers\Admin\ParksController::class,
+        'action' => 'create',
+        'method' => 'GET'
+    ]
+);
+
+$router->add(
+    'admin/parks/store',
+    [
+        'controller' => \App\Controllers\Admin\ParksController::class,
+        'action' => 'store',
+        'method' => 'POST'
+    ]
+);
+
+$router->add(
+    'admin/parks/{id:\d+}/edit',
+    [
+        'controller' => \App\Controllers\Admin\ParksController::class,
+        'action' => 'edit',
+        'method' => 'GET'
+    ]
+);
+
+$router->add(
+    'admin/parks/{id:\d+}/update',
+    [
+        'controller' => \App\Controllers\Admin\ParksController::class,
+        'action' => 'update',
+        'method' => 'POST'
+    ]
+);
+
+$router->add(
+    'admin/parks/{id:\d+}/destroy',
+    [
+        'controller' => \App\Controllers\Admin\ParksController::class,
+        'action' => 'destroy',
+        'method' => 'POST'
+    ]
+);
