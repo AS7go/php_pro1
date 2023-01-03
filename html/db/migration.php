@@ -22,7 +22,10 @@ class Migration
             $this->runAllMigrations();
             Db::connect()->commit();
         } catch (PDOException $exception) {
-            Db::connect()->rollBack();
+            //убирает ошибку Fatal error: Uncaught PDOException: There is no active transaction in
+            if (Db::connect()->beginTransaction()) {
+                Db::connect()->rollBack();
+            }
             d($exception->getMessage());
         }
     }
