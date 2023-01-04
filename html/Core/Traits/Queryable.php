@@ -23,7 +23,7 @@ trait Queryable
 
         return $obj;
     }
-
+    // === Create ===
     // INSERT INTO table () VALUES ()
     public static function create(array $data): int
     {
@@ -105,7 +105,7 @@ trait Queryable
         return $obj;
     }
 
-    // === update ===
+    // === Update ===
     public function update(array $data)
     {
         $query = "UPDATE " . static::$tableName . " SET " . $this->prepareUpdateParams(array_keys($data)) . " WHERE id=:id";
@@ -114,7 +114,7 @@ trait Queryable
 
         return $query->execute($data);
     }
-    // === destroy ===
+    // === Destroy ===
     public function destroy(): bool
     {
         $query = "DELETE FROM " . static::$tableName . " WHERE id=:id";
