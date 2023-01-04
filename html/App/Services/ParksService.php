@@ -16,8 +16,28 @@ class ParksService
         return (bool)Park::create($fields);
     }
 
+<<<<<<< HEAD
     public static function update()
     {
 
+=======
+    public static function update(int $id, array $fields, ParksValidator $validator): bool
+    {
+        $result = true;
+        $park = Park::find($id);
+
+
+//        dd($validator->validate($fields), $validator);
+        if (!$validator->validate($fields)) {
+            $result = false;
+        }
+
+        if ($fields['serial_number'] !== $park->serial_number && Park::findBy('serial_number', $fields['serial_number'])){
+            $validator->setError('serial_number', 'Duplicated serial number');
+            $result = false;
+        }
+
+        return $result ? $park->update($fields) : $result;
+>>>>>>> 98b696733ebfc89aac0f60610a98d59d2c81200e
     }
 }

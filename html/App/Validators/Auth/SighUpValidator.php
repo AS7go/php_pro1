@@ -13,10 +13,10 @@ class SighUpValidator extends Base
     ];
 
     protected array $errors = [
-        'email_error' => 'Email is incorrect',
-        'password_error' => 'Password is incorrect',
-        'user_nm_error' => 'Username contain only "a-z A-Z 0-9 _" and length should be mode than 3 symbols',
-        'name_error' => 'Name should contain only "a-z A-Z" characters and length should be more than 2 symbols',
-        'surname_error' => 'Surname should contain only "a-z A-Z" characters and length should be more than 2 symbols'
+        'email' => 'Email is incorrect',
+        'password' => 'Password is incorrect',
+        'user_nm' => 'Username contain only "a-z A-Z 0-9 _" and length should be mode than 3 symbols',
+        'name' => 'Name should contain only "a-z A-Z" characters and length should be more than 2 symbols',
+        'surname' => 'Surname should contain only "a-z A-Z" characters and length should be more than 2 symbols'
     ];
 }
