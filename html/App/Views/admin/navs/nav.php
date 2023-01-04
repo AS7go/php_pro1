@@ -7,14 +7,13 @@
     <ul class="list-unstyled ps-0">
         <li class="mb-1">
             <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
-                Home
+                Parks
             </button>
-<!--            <div class="collapse show" id="home-collapse">-->
             <div class="collapse" id="home-collapse">
                 <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                    <li><a href="#" class="d-inline-flex text-decoration-none rounded">Overview</a></li>
-                    <li><a href="#" class="d-inline-flex text-decoration-none rounded">Updates</a></li>
-                    <li><a href="#" class="d-inline-flex text-decoration-none rounded">Reports</a></li>
+                    <li><a href="<?= url('admin/parks') ?>" class="d-inline-flex text-decoration-none rounded">List</a></li>
+                    <li><a href="<?= url('admin/parks/create') ?>" class="d-inline-flex text-decoration-none rounded">Create</a></li>
+<!--                    <li><a href="#" class="d-inline-flex text-decoration-none rounded">Reports</a></li>-->
                 </ul>
             </div>
         </li>
