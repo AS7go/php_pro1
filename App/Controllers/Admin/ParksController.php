@@ -31,7 +31,7 @@ class ParksController extends BaseController
             redirect('admin/parks');
         }
 
-//        dd($this->getErrors($fields, $validator));
+        dd($this->getErrors($fields, $validator));
 
         View::render('admin/parks/create', $this->getErrors($fields, $validator));
 //        dd($_POST);
