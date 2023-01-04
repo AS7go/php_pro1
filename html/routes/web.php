@@ -115,6 +115,6 @@ $router->add(
     [
         'controller' => \App\Controllers\Admin\ParksController::class,
         'action' => 'destroy',
-        'method' => 'POST'
+        'method' => 'GET'
     ]
 );
