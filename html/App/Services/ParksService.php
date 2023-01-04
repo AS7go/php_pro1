@@ -20,8 +20,6 @@ class ParksService
     {
         $result = true;
         $park = Park::find($id);
-
-
 //        dd($validator->validate($fields), $validator);
         if (!$validator->validate($fields)) {
             $result = false;
@@ -33,6 +31,5 @@ class ParksService
         }
 
         return $result ? $park->update($fields) : $result;
-
     }
 }

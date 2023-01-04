@@ -31,7 +31,5 @@ $errors = $errors ?? [];
             </div>
         </div>
     </div>
-
-
 <?php
 \Core\View::render('admin/blocks/footer');

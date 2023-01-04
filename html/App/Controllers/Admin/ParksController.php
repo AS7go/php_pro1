@@ -31,9 +31,7 @@ class ParksController extends BaseController
             redirect('admin/parks');
         }
 
-
         d($this->getErrors($fields, $validator));
-
 
         View::render('admin/parks/create', $this->getErrors($fields, $validator));
 //        dd($_POST);
@@ -41,7 +39,6 @@ class ParksController extends BaseController
 
     public function edit(int $id)
     {
-
         $park = Park::find($id); // 1 найти парк по id и редактировать, обновить поля
         View::render('admin/parks/edit', compact('park'));
 //        dd($park);
@@ -49,7 +46,6 @@ class ParksController extends BaseController
 
     public function update(int $id)
     {
-
         $fields = filter_input_array(INPUT_POST, $_POST);
         $validator = new ParksValidator();
 
@@ -63,7 +59,6 @@ class ParksController extends BaseController
             ['park' => (object)$fields]
         );
 
-//        View::render('admin/parks/edit', $this->getErrors($fields, $validator));
         View::render('admin/parks/edit', $params);
 
     }

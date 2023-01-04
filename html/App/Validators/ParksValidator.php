@@ -14,12 +14,6 @@ class ParksValidator extends BaseValidator
     ];
 
     protected array $errors = [
-
-
-//    public function checkIfExists(string $serialNumber): bool|Park
-//    {
-//        return Park::findBy('serial_number', $serialNumber);
-//    }
         'serial_number' => 'Serial number should contain only "a-z A-Z 0-9 _" and length should be more than 3 symbols and less than 16',
         'address' => 'Address should contain only "a-z A-Z 0-9 _" and length should be more than 3 symbols',
     ];
