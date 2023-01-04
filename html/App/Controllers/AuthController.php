@@ -34,7 +34,7 @@ class AuthController extends Controller
             redirect('login');
         }
 
-        View::render('auth/register', $this->getErrors($fields, $validator, ['email' => 'Email already exists']));
+        View::render('auth/register', $this->getErrors($fields, $validator, ['email_error' => 'Email already exists']));
     }
 
     public function verify()
@@ -46,7 +46,7 @@ class AuthController extends Controller
             redirect('admin/dashboard');
         }
 
-        View::render('auth/login', $this->getErrors($fields, $validator, ['email' => 'Email already exists']));
+        View::render('auth/login', $this->getErrors($fields, $validator, ['email_error' => 'Email already exists']));
     }
 
     public function logout()

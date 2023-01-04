@@ -11,7 +11,7 @@ class BaseValidator
         foreach ($fields as $key => $value){
 //            d($key, $value, $this->rules[$key], preg_match($this->rules[$key], $value));
             if (!empty($this->rules[$key]) && preg_match($this->rules[$key], $value)) {
-                unset($this->errors["{$key}"]);
+                unset($this->errors["{$key}_error"]);
             }
         }
 
@@ -21,10 +21,5 @@ class BaseValidator
     public function getErrors(): array
     {
         return $this->errors;
-    }
-
-    public function setError(string $key,string $message)
-    {
-        $this->errors[$key] = $message;
     }
 }
