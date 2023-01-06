@@ -9,12 +9,13 @@ use App\Validators\Base\BaseValidator;
 class CarsValidator extends BaseValidator
 {
     protected array $rules = [
-        'serial_number' => '/^[a-zA-Z0-9_]{3,16}$/',
-        'address' => '/[a-zA-Z0-9_]{3,}/',
+        'park_id' => '/^[a-zA-Z0-9_]{1,16}$/',
+        'model' => '/[a-zA-Z0-9_]{1,}/',
     ];
 
     protected array $errors = [
-        'serial_number' => 'Serial number should contain only "a-z A-Z 0-9 _" and length should be more than 3 symbols and less than 16',
-        'address' => 'Address should contain only "a-z A-Z 0-9 _" and length should be more than 3 symbols',
+        'park_id' => 'Serial number should contain only "a-z A-Z 0-9 _" and length should be more than 1 symbols and less than 16',
+        'model' => 'Address should contain only "a-z A-Z 0-9 _" and length should be more than 1 symbols',
+
     ];
 }

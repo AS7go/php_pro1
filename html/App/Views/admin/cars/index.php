@@ -4,7 +4,7 @@
 ?>
     <!--    <section style="padding: 5rem 0;">-->
     <section class="pt-5 pb-5">
-        <h3> Parks </h3>
+        <h3> Car </h3>
         <hr>
         <?php if (!empty($cars)): ?>
             <table class="table table-dark table-striped">

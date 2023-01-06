@@ -3,7 +3,7 @@
 namespace App\Controllers\Admin;
 
 use App\Models\Car;
-use App\Models\Cars;
+//use App\Models\Cars;
 use App\Services\CarsService;
 use App\Validators\CarsValidator;
 use Core\View;
@@ -32,7 +32,7 @@ class CarsController extends BaseController
             redirect('admin/cars');
         }
 
-//        d($this->getErrors($fields, $validator));
+        d($this->getErrors($fields, $validator));
 
         View::render('admin/cars/create', $this->getErrors($fields, $validator));
 //        dd($_POST);
@@ -42,7 +42,7 @@ class CarsController extends BaseController
     {
         $car = Car::find($id); // 1 найти парк по id и редактировать, обновить поля
         View::render('admin/cars/edit', compact('car'));
-//        dd($car);
+//        d($car); // ddd
     }
 
     public function update(int $id)
@@ -50,7 +50,7 @@ class CarsController extends BaseController
         $fields = filter_input_array(INPUT_POST, $_POST);
         $validator = new CarsValidator();
 
-//        dd(carsService::update($id, $fields, $validator));
+//        d(CarsService::update($id, $fields, $validator)); // ddd
         if (CarsService::update($id, $fields, $validator)){
             redirect('admin/cars');
         }

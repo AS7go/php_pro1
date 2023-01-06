@@ -4,7 +4,6 @@ namespace App\Services;
 
 use App\Models\Car;
 use App\Validators\CarsValidator;
-use App\Validators\ParksValidator;
 
 class CarsService
 {
@@ -21,13 +20,18 @@ class CarsService
     {
         $result = true;
         $car = Car::find($id);
-//        dd($validator->validate($fields), $validator);
+        d($validator->validate($fields), $validator);
         if (!$validator->validate($fields)) {
             $result = false;
         }
 
-        if ($fields['park_id'] !== $car->park_id && Car::findBy('park_id', $fields['park_id'])){
-            $validator->setError('park_id', 'Duplicated serial number');
+//        if ($fields['park_id'] !== $car->park_id && Car::findBy('park_id', $fields['park_id'])){
+//            $validator->setError('park_id', 'Duplicated serial number');
+//            $result = false;
+//        }
+
+        if ($fields['id'] !== $car->id && Car::findBy('id', $fields['id'])){
+            $validator->setError('id', 'Duplicated serial number');
             $result = false;
         }
 

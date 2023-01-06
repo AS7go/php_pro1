@@ -111,6 +111,7 @@ trait Queryable
         $query = "UPDATE " . static::$tableName . " SET " . $this->prepareUpdateParams(array_keys($data)) . " WHERE id=:id";
         $query = Db::connect()->prepare($query);
         $data['id'] = $this->id; // $park->id
+//        d($this->id); // ddd
 
         return $query->execute($data);
     }
