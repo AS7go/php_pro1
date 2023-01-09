@@ -16,11 +16,9 @@ class CarsController extends BaseController
 //        dd($cars);
         View::render('admin/cars/index', compact('cars'));
     }
-    // public function show(int $id){}
     public function create()
     {
         View::render('admin/cars/create');
-
     }
 
     public function store()
@@ -32,15 +30,15 @@ class CarsController extends BaseController
             redirect('admin/cars');
         }
 
-        d($this->getErrors($fields, $validator));
+//        d($this->getErrors($fields, $validator)); // ddd
 
         View::render('admin/cars/create', $this->getErrors($fields, $validator));
-//        dd($_POST);
+//        d($_POST); // ddd
     }
 
     public function edit(int $id)
     {
-        $car = Car::find($id); // 1 найти парк по id и редактировать, обновить поля
+        $car = Car::find($id); //
         View::render('admin/cars/edit', compact('car'));
 //        d($car); // ddd
     }

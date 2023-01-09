@@ -74,8 +74,6 @@ $router->add(
     ]
 );
 
-
-
 $router->add(
     'admin/parks/create',
     [
@@ -84,8 +82,6 @@ $router->add(
         'method' => 'GET'
     ]
 );
-
-
 
 $router->add(
     'admin/parks/store',

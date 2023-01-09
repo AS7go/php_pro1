@@ -15,7 +15,6 @@ class ParksController extends BaseController
 //        dd($parks);
         View::render('admin/parks/index', compact('parks'));
     }
-    // public function show(int $id){}
     public function create()
     {
         View::render('admin/parks/create');
@@ -31,7 +30,7 @@ class ParksController extends BaseController
             redirect('admin/parks');
         }
 
-        d($this->getErrors($fields, $validator));
+//        d($this->getErrors($fields, $validator));
 
         View::render('admin/parks/create', $this->getErrors($fields, $validator));
 //        dd($_POST);

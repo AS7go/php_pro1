@@ -20,7 +20,7 @@ class CarsService
     {
         $result = true;
         $car = Car::find($id);
-        d($validator->validate($fields), $validator);
+//        d($validator->validate($fields), $validator); // ddd
         if (!$validator->validate($fields)) {
             $result = false;
         }
@@ -29,11 +29,11 @@ class CarsService
 //            $validator->setError('park_id', 'Duplicated serial number');
 //            $result = false;
 //        }
-
-        if ($fields['id'] !== $car->id && Car::findBy('id', $fields['id'])){
-            $validator->setError('id', 'Duplicated serial number');
-            $result = false;
-        }
+//
+//        if ($fields['id'] !== $car->id && Car::findBy('id', $fields['id'])){
+//            $validator->setError('id', 'Duplicated id');
+//            $result = false;
+//        }
 
         return $result ? $car->update($fields) : $result;
     }

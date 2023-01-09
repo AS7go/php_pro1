@@ -1,7 +1,7 @@
 <?php
 \Core\View::render('admin/blocks/header', ['pageTitle' => 'Cars']);
-
 ?>
+
     <!--    <section style="padding: 5rem 0;">-->
     <section class="pt-5 pb-5">
         <h3> Car </h3>
@@ -37,7 +37,7 @@
                 </tbody>
             </table>
         <?php else: ?>
-            <h6>There are no parks yet</h6>
+            <h6>There are no cars yet</h6>
         <?php endif; ?>
     </section>
 <?php
