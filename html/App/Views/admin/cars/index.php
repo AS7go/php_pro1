@@ -3,7 +3,7 @@
 ?>
 
     <!--    <section style="padding: 5rem 0;">-->
-    <section class="pt-5 pb-5">
+    <section class="pt-3 pb-5">
         <h3> Cars </h3>
         <hr>
         <?php if (!empty($cars)): ?>

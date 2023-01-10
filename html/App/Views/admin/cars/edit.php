@@ -2,7 +2,7 @@
 \Core\View::render('admin/blocks/header', ['pageTitle' => 'Create car']);
 $errors = $errors ?? [];
 ?>
-    <div class="container pt-5 pb-5">
+    <div class="container pt-3 pb-5">
         <div class="row">
             <h3>Update Car</h3>
         </div>
