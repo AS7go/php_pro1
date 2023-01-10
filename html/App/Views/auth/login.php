@@ -18,7 +18,7 @@ $errors = $errors ?? [];
                             <label for="exampleInputPassword" class="form-label">Password</label>
                             <input type="password" class="form-control" id="exampleInputPassword" name="password">
                         </div>
-                        <?= showInputError('password_error', $errors); ?>
+                        <?= showInputError('password', $errors); ?>
                     </div>
                     <div class="card-footer">
                         <div class="mb-3 form-check">

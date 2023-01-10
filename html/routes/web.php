@@ -62,3 +62,116 @@ $router->add(
         'method' => 'GET'
     ]
 );
+
+// Admin Parks
+
+$router->add(
+    'admin/parks',
+    [
+        'controller' => \App\Controllers\Admin\ParksController::class,
+        'action' => 'index',
+        'method' => 'GET'
+    ]
+);
+
+$router->add(
+    'admin/parks/create',
+    [
+        'controller' => \App\Controllers\Admin\ParksController::class,
+        'action' => 'create',
+        'method' => 'GET'
+    ]
+);
+
+$router->add(
+    'admin/parks/store',
+    [
+        'controller' => \App\Controllers\Admin\ParksController::class,
+        'action' => 'store',
+        'method' => 'POST'
+    ]
+);
+
+$router->add(
+    'admin/parks/{id:\d+}/edit',
+    [
+        'controller' => \App\Controllers\Admin\ParksController::class,
+        'action' => 'edit',
+        'method' => 'GET'
+    ]
+);
+
+$router->add(
+    'admin/parks/{id:\d+}/update',
+    [
+        'controller' => \App\Controllers\Admin\ParksController::class,
+        'action' => 'update',
+        'method' => 'POST'
+    ]
+);
+
+$router->add(
+    'admin/parks/{id:\d+}/destroy',
+    [
+        'controller' => \App\Controllers\Admin\ParksController::class,
+        'action' => 'destroy',
+        'method' => 'GET'
+    ]
+);
+
+//=================================================
+// Admin Cars
+
+$router->add(
+    'admin/cars',
+    [
+        'controller' => \App\Controllers\Admin\CarsController::class,
+        'action' => 'index',
+        'method' => 'GET'
+    ]
+);
+
+$router->add(
+    'admin/cars/create',
+    [
+        'controller' => \App\Controllers\Admin\CarsController::class,
+        'action' => 'create',
+        'method' => 'GET'
+    ]
+);
+
+$router->add(
+    'admin/cars/store',
+    [
+        'controller' => \App\Controllers\Admin\CarsController::class,
+        'action' => 'store',
+        'method' => 'POST'
+    ]
+);
+
+$router->add(
+    'admin/cars/{id:\d+}/edit',
+    [
+        'controller' => \App\Controllers\Admin\CarsController::class,
+        'action' => 'edit',
+        'method' => 'GET'
+    ]
+);
+
+$router->add(
+    'admin/cars/{id:\d+}/update',
+    [
+        'controller' => \App\Controllers\Admin\CarsController::class,
+        'action' => 'update',
+        'method' => 'POST'
+    ]
+);
+
+$router->add(
+    'admin/cars/{id:\d+}/destroy',
+    [
+        'controller' => \App\Controllers\Admin\CarsController::class,
+        'action' => 'destroy',
+        'method' => 'GET'
+    ]
+);

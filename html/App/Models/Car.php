@@ -2,13 +2,15 @@
 
 namespace App\Models;
 
-class Car extends \Core\Model
-{
-    static protected string|null $tableName = 'cars';
+use Core\Model;
 
-    public function getInfo(): string
-    {
-        // $this?->name == альтернатива old == if $this === null ? null : $this->name
-        return $this?->model . ' - ' . $this?->price;
-    }
+class Car extends Model
+{
+//    static protected string|null $tableName = 'cars';
+    protected static string|null $tableName='cars';
+//    public function getInfo(): string
+//    {
+//        // $this?->name == альтернатива old == if $this === null ? null : $this->name
+//        return $this?->model . ' - ' . $this?->price;
+//    }
 }
